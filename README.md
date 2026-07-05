@@ -15,11 +15,7 @@
 
 ![Welcome Screen](Screenshot%202%20(welcome).png)
 
-### Notes Interface
 
-![Notes Interface](Screenshot_1_(supported%20img).png)
-
----
 
 ## ✨ Features
 
