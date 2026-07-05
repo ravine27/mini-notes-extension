@@ -17,7 +17,7 @@
 
 ### Notes Interface
 
-![Notes Interface](images/notebook.png)
+![Notes Interface](Screenshot_1_(supported%20img).png)
 
 ---
 
