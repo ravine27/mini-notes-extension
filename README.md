@@ -13,7 +13,7 @@
 
 ### Welcome Screen
 
-![Welcome Screen](images/welcome.png)
+![Welcome Screen](Screenshot%202%20(welcome).png)
 
 ### Notes Interface
 
