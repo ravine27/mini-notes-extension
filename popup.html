@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Notes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="notes-popup">
+  <main class="notes-app" aria-label="Simple Notes">
+    <header class="notes-header">
+      <h1 class="notes-title">Simple Notes</h1>
+      <label class="visually-hidden" for="searchInput">Search notes</label>
+      <input
+        id="searchInput"
+        class="search-input"
+        type="search"
+        placeholder="Search notes"
+        autocomplete="off"
+      >
+    </header>
+
+    <section class="notes-list-section" aria-label="Notes list">
+      <ul id="notesList" class="notes-list" role="listbox" aria-label="Saved notes"></ul>
+    </section>
+
+    <section class="editor-section" aria-label="Note editor">
+      <label class="visually-hidden" for="titleInput">Note title</label>
+      <input
+        id="titleInput"
+        class="note-title-input"
+        type="text"
+        placeholder="Untitled note"
+        autocomplete="off"
+      >
+
+      <label class="visually-hidden" for="contentInput">Note content</label>
+      <textarea
+        id="contentInput"
+        class="note-content-input"
+        placeholder="Start writing..."
+      ></textarea>
+    </section>
+
+    <section class="actions-section" aria-label="Actions">
+      <button id="newNoteBtn" class="btn" type="button">New Note</button>
+      <button id="saveNoteBtn" class="btn btn-primary" type="button">Save</button>
+      <button id="deleteNoteBtn" class="btn btn-danger" type="button">Delete</button>
+    </section>
+
+    <footer class="status-section">
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+    </footer>
+  </main>
+
+  <template id="noteItemTemplate">
+    <li class="note-item" role="option">
+      <button type="button" class="note-select-btn">
+        <span class="note-item-title"></span>
+        <span class="note-item-preview"></span>
+      </button>
+    </li>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html>

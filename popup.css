@@ -1,0 +1,232 @@
+.notes-popup .notes-app {
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-border: #dfe4ea;
+  --color-text: #17212f;
+  --color-subtle: #5f6f86;
+  --color-primary: #2563eb;
+  --color-danger: #dc2626;
+  --color-active-bg: #eaf1ff;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+  inline-size: 420px;
+  max-block-size: min(78vh, 640px);
+  display: grid;
+  grid-template-rows: auto auto minmax(220px, 1fr) auto auto;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, #f8faff 0%, var(--color-bg) 100%);
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+
+.notes-popup .notes-app,
+.notes-popup .notes-app * {
+  box-sizing: border-box;
+}
+
+.notes-popup .notes-header {
+  display: grid;
+  gap: 8px;
+}
+
+.notes-popup .notes-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.notes-popup .search-input,
+.notes-popup .note-title-input,
+.notes-popup .note-content-input {
+  inline-size: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 14px;
+}
+
+.notes-popup .search-input,
+.notes-popup .note-title-input {
+  block-size: 38px;
+  padding: 8px 10px;
+}
+
+.notes-popup .note-content-input {
+  min-block-size: 200px;
+  resize: vertical;
+  padding: 10px;
+  line-height: 1.45;
+}
+
+.notes-popup .search-input:focus-visible,
+.notes-popup .note-title-input:focus-visible,
+.notes-popup .note-content-input:focus-visible,
+.notes-popup .btn:focus-visible,
+.notes-popup .note-select-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.notes-popup .notes-list-section {
+  min-block-size: 130px;
+  max-block-size: 180px;
+  overflow: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.notes-popup .notes-list {
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.notes-popup .note-item {
+  margin: 0;
+}
+
+.notes-popup .note-select-btn {
+  inline-size: 100%;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.notes-popup .note-select-btn:hover {
+  background: #f8fbff;
+}
+
+.notes-popup .note-select-btn.is-selected {
+  background: var(--color-active-bg);
+  border-color: #c5d6ff;
+}
+
+.notes-popup .note-item-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notes-popup .note-item-preview {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color-subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notes-popup .empty-list {
+  padding: 14px 10px;
+  font-size: 12px;
+  color: var(--color-subtle);
+}
+
+.notes-popup .editor-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  min-block-size: 0;
+}
+
+.notes-popup .actions-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.notes-popup .btn {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  block-size: 36px;
+  padding: 0 10px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notes-popup .btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.notes-popup .btn-danger {
+  color: var(--color-danger);
+}
+
+.notes-popup .status-section {
+  min-block-size: 18px;
+}
+
+.notes-popup .status-message {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-subtle);
+}
+
+.notes-popup .status-message.is-error {
+  color: var(--color-danger);
+}
+
+.notes-popup .visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 430px) {
+  .notes-popup .notes-app {
+    inline-size: min(420px, calc(100vw - 16px));
+    max-block-size: min(78vh, 620px);
+  }
+
+  .notes-popup .actions-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .notes-popup .notes-app {
+    --color-bg: #0f172a;
+    --color-surface: #111827;
+    --color-border: #273449;
+    --color-text: #e2e8f0;
+    --color-subtle: #93a4bd;
+    --color-active-bg: #1e293b;
+    background: linear-gradient(180deg, #1a2438 0%, #0f172a 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .notes-popup .note-select-btn:hover {
+    background: #172135;
+  }
+}
